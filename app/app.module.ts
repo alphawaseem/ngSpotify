@@ -7,7 +7,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SearchComponent } from './components/search/search.component';
 import { SpotifyService } from './services/spotify.service';
 import { HttpModule } from '@angular/http';
-
+import { ArtistComponent } from './components/artist/artist.component';
 const routes : Routes = [
   {
         path: '',
@@ -20,12 +20,16 @@ const routes : Routes = [
       },{
         path : 'about',
         component : AboutComponent
-      }
+      },{
+         path: 'artists/:id',
+        component: ArtistComponent
+      },
+      
 ]
 
 @NgModule({
   imports:      [ BrowserModule,RouterModule.forRoot(routes),HttpModule ],
-  declarations: [ AppComponent,NavBarComponent,SearchComponent,AboutComponent],
+  declarations: [ AppComponent,NavBarComponent,SearchComponent,AboutComponent,ArtistComponent],
   bootstrap:    [ AppComponent ],
   providers : [SpotifyService]
 })
