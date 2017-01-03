@@ -7,10 +7,14 @@ import 'rxjs/add/operator/map';
     templateUrl : 'search.component.html'
 })
 export class SearchComponent{
+    searchResults : any[];
     constructor(private spotifyService : SpotifyService){
 
     }
     searchMusic(search:string){
-        this.spotifyService.searchMusic(search).subscribe(result => console.log(result));
+        this.spotifyService.searchMusic(search).subscribe(result => {
+            this.searchResults = result;
+            console.log(this.searchResults)
+        });
     }
 }

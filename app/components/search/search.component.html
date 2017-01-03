@@ -1,10 +1,34 @@
-<h1>Need Music?</h1>
-<p class="lead">Search your fav music,artist or track here.</p>
+<div class="container">
 
-<form>
+    <h1>Need Music?</h1>
+    <p class="lead">Search your fav artist here...</p>
 
-    <div class="form-group">
-        <input type="search" name="search" #search class="form-control" placeholder="search artist" (keyup)="searchMusic(search.value)">
+    <form>
+
+        <div class="form-group">
+            <input type="search" name="search" #search class="form-control" placeholder="search artist" (keyup)="searchMusic(search.value)">
+        </div>
+
+    </form>
+
+    <div class="container">
+        <div *ngIf="searchResults">
+
+            <div *ngFor="let res of searchResults">
+                <div class="row">
+                    <div class="card card-outline-danger text-xs-center col-xs-12">
+                        <div class="card-block">
+                            <blockquote class="card-blockquote">
+                                <h4><a href="#">{{res.name}}</a></h4>
+
+                                <footer><span *ngFor="let genre of res.genres; let i=index">{{genre}}<span *ngIf="i<res.genres.length-1">,</span></span>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-</form>
+</div>
