@@ -1,1 +1,26 @@
-<div *ngIf="artist">{{artist.name}}</div>
+<div class="container">
+    <div *ngIf="artist">
+        <header class="artist-header clearfix">
+            <div *ngIf="artist.images.length>0">
+                <img class="artist-thumb img-circle" [src]="artist.images[1].url">
+            </div>
+            <h4>{{artist.name}}</h4>
+            <span *ngFor="let genre of artist.genres; let i=index">{{genre}}<span *ngIf="i<artist.genres.length-1">,</span></span>
+        </header>
+        <div *ngIf="albums">
+            <div class="card-columns">
+                <div *ngFor="let album of albums">
+                    <div class="card-deck">
+                        <div class="card bg-black card-outline-danger">
+                            <br>
+                            <img class="rounded mx-auto d-block" [src]="album.images[1].url" alt="Album cover">
+                            <div class="card-block">
+                                <h4 class="card-title text-primary">{{album.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

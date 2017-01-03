@@ -15,7 +15,7 @@ export class NavBarComponent {
     selectedItem : NavItem;
     constructor(){
         this.projectName = "ngSpotify";
-        this.items.push(new NavItem('Home','/home'));
+        this.items.push(new NavItem('Search','/home'));
         this.items.push(new NavItem('About','/about'));
         this.selectedItem=this.items[0];
     }
