@@ -11,7 +11,7 @@ export class ArtistComponent implements OnInit{
     artist : any;
     albums : any;
     constructor(private activatedRoute : ActivatedRoute,private spotifyService : SpotifyService){
-        this.activatedRoute.params.subscribe(params => { this.id = params['id']; })                
+        this.activatedRoute.params.subscribe(params => { this.id = params['id']; });                
     }
     ngOnInit(){
         this.getArtist();

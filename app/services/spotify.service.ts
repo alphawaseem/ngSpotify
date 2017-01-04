@@ -13,8 +13,17 @@ export class SpotifyService{
         return this.http.get(`https://api.spotify.com/v1/artists/${id}`)
         .map(res => res.json());
     }
-    getAlbums(id:string){
-        return this.http.get(`https://api.spotify.com/v1/artists/${id}/albums`)
+    getAlbums(artistId:string){
+        return this.http.get(`https://api.spotify.com/v1/artists/${artistId}/albums`)
         .map(res => res.json());
     }
+    getAlbumDetails(albumId:string){
+        return this.http.get(`https://api.spotify.com/v1/albums/${albumId}`)
+        .map(res => res.json());
+    }
+    getAlbumTracks(albumId:string){
+        return this.http.get(`https://api.spotify.com/v1/albums/${albumId}/tracks/`)
+        .map(res => res.json());
+    }
+
 }

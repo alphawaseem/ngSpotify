@@ -19,7 +19,7 @@
                     <div class="card card-outline-danger text-xs-center col-xs-12">
                         <div class="card-block">
                             <blockquote class="card-blockquote">
-                                <h4><a [routerLink]="['/artists',res.id]">{{res.name}}</a></h4>
+                                <h4><a [routerLink]="['/artist',res.id]">{{res.name}}</a></h4>
 
                                 <footer><span *ngFor="let genre of res.genres; let i=index">{{genre}}<span *ngIf="i<res.genres.length-1">,</span></span>
                                 </footer>

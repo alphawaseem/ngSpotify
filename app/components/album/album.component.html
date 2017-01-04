@@ -1,0 +1,27 @@
+<div class="container">
+    <div *ngIf="album">
+        <header class="artist-header clearfix">
+            <div *ngIf="album.images.length>0">
+                <img class="artist-thumb img-circle" [src]="album.images[1].url">
+            </div>
+            <h4>{{album.name}}</h4>
+
+            <span>Album</span>
+        </header>
+        <div *ngIf="tracks">
+            <div class="card-columns">
+                <div *ngFor="let track of tracks">
+                    <div class="card-deck">
+                        <div class="card bg-black card-outline-danger text-xs-center">
+                            <h4 class="card-title text-primary">{{track.name}}</h4>
+                            <div class="card-block">
+                                <a class="btn btn-primary" href="{{track.preview_url}}" target="_blank" role="button ">▶ Preview</a>
+                                <a class="btn btn-info " href="{{track.external_urls.spotify}}" target="_blank" role="button ">ℹ View Info</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
